@@ -1,8 +1,5 @@
 #!/bin/bash
 
-source settings.sh
-source $XL_HOME/user_setting.sh
-
 echo "${green}Prepare the Environment${reset}"
 rm -rf $PREFIX
 mkdir -p $PREFIX
