@@ -30,16 +30,16 @@ echo "${green}Running Assingment A: Title Count${reset}"
 run_assignment TitleCount "-D stopwords=$HDFS_HOME/misc/stopwords.txt -D delimiters=$HDFS_HOME/misc/delimiters.txt  $HDFS_HOME/titles" "-n -k2 -r"
 
 echo "${green}Running Assingment B: Top Titles${reset}"
-run_assignment TopTitles "-D stopwords=$HDFS_HOME/misc/stopwords.txt -D delimiters=$HDFS_HOME/misc/delimiters.txt -D N=$N  $HDFS_HOME/titles" "-n -k2 -r"
+run_assignment TopTitles "-D stopwords=$HDFS_HOME/misc/stopwords.txt -D delimiters=$HDFS_HOME/misc/delimiters.txt -D N=$DATASET_N  $HDFS_HOME/titles" "-n -k2 -r"
 
 echo "${green}Running Assingment C: Top Title Statistics${reset}"
-run_assignment TopTitleStatistics "-D stopwords=$HDFS_HOME/misc/stopwords.txt -D delimiters=$HDFS_HOME/misc/delimiters.txt -D N=$N $HDFS_HOME/titles" "-k1"
+run_assignment TopTitleStatistics "-D stopwords=$HDFS_HOME/misc/stopwords.txt -D delimiters=$HDFS_HOME/misc/delimiters.txt -D N=$DATASET_N $HDFS_HOME/titles" "-k1"
 
 echo "${green}Running Assingment D: Orphan Pages${reset}"
 run_assignment OrphanPages "$HDFS_HOME/links"  "-n -k1"
 
 echo "${green}Running Assingment E: Top Popular Links${reset}"
-run_assignment TopPopularLinks "-D N=$N $HDFS_HOME/links"  "-n -k2 -r"
+run_assignment TopPopularLinks "-D N=$DATASET_N $HDFS_HOME/links"  "-n -k2 -r"
 
 echo "${green}Running Assingment F: Popularity League${reset}"
 run_assignment PopularityLeague "-D league=$HDFS_HOME/misc/league.txt  $HDFS_HOME/links"  "-n -k2 -r"
